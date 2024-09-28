@@ -1,15 +1,16 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "index": "Introdução",
+  "planejamento": "Planejamento",
+  "analise": "Análise",
+  "teste": "Teste",
+  "sobre": {
+    "title": "Sobre",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Contato ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://github.com/IgorAugust0",
     "newWindow": true
   }
 }
