@@ -1,1 +1,232 @@
 # Documento de Visão
+
+## 1. Introdução:
+
+### 1.1 Propósito
+
+Este documento de visão tem como objetivo estabelecer e declarar todos os propósitos e parâmetros para o desenvolvimento do sistema de gerenciamento de condomínio CondoEasy.
+
+### 1.2 Escopo
+
+O projeto tem como objetivo facilitar a administração condominial, visando melhorar a conexão entre os condôminos e síndicos. Dessa forma, permitindo a realização da gestão do condomínio de forma mais eficiente
+
+### 1.3 Definições, acrônimos e abreviações
+
+- UFU – Universidade Federal de Uberlândia.
+- SI – Sistemas de Informação.
+- UI – User Interface (interface visível e apresentada ao usuário)
+- UX – User experience (experiência do usuário no sistema, facilidade de uso etc.)
+- Back-end – Servidor onde é feito o tratamento das requisições e consulta em banco de dados.
+- Front-end – Interface que o usuário acessa e que manda solicitações para o Back-end.
+- API – Interface de programação de aplicação (Conexão entre sistemas)
+- Framework – Conjunto de códigos genéricos que permite e facilita o desenvolvimento de aplicações
+- SO – Sistema Operacional.
+
+### 1.4 Visão Geral
+
+Inicialmente, tem-se a Seção 1 na qual tem como objetivo apresentar o conteúdo deste documento de visão, fornecendo informações essenciais sobre o projeto. Na Seção 2, abordamos o posicionamento do produto, destacando a oportunidade de negócio e o problema central que o projeto se propõe a solucionar. A Seção 3 dedica-se a descrever tanto os usuários do sistema quanto a equipe responsável pelo desenvolvimento e gestão do projeto, além de alguns requisitos fundamentais do sistema. Nessa mesma seção, são detalhadas as funcionalidades concebidas para resolver os problemas identificados anteriormente.
+
+Por outro lado, já na outra metade das outras seções, a 4 por sua vez, concentra-se na visão geral do produto, delineando o escopo do produto de maneira abrangente. Os recursos do produto são minuciosamente explorados na Seção 5, descrevendo as funções e capacidades específicas do aplicativo. Finalmente, a Seção 6 aborda as restrições, incluindo aspectos relacionados ao design, implementação, segurança e uso.
+
+## 2. Posicionamento
+
+### 2.1 Oportunidade de Negócio
+
+Com a demanda crescente por eficiência, transparência e tecnologia na administração de condomínios, há uma oportunidade significativa para oferecer um sistema de gerenciamento condominial, proporcionando benefícios tanto para os moradores quanto para os profissionais de gestão condominial na administração de condomínios.
+
+Portanto, o objetivo do CondoEasy é fazer uso da tecnologia de informação, automatizando e otimizando diversos processos que fazem parte do gerenciamento de um condomínio, como a gestão de áreas comuns, emissão de taxas, solicitações/acompanhamentos de serviços gerais de manutenção, entre outros.
+
+### 2.2 Descrição do Problema
+
+O problema da gestão manual de condomínios afeta administradores e moradores, resultando em processos ineficientes, falta de transparência financeira e comunicação ineficaz. O impacto desse problema inclui a desorganização administrativa, conflitos de agendamento de áreas comuns e dificuldades na comunicação de emergência.
+
+Uma solução bem-sucedida, como o sistema proposto, ofereceria automação de processos, transparência financeira, agendamento eficiente de áreas comuns e uma comunicação mais rápida e eficaz, melhorando significativamente a qualidade de vida dos moradores e simplificando a gestão para os administradores.
+
+| **Descrição do Problema** | **O que afeta** | **Impacto disso** | **Solução viável** |
+| --- | --- | --- | --- |
+| Falha na comunicação entre moradores e síndico | Acesso a informações importantes | Tomada de decisões unilaterais e não democráticas | Disponibilizar uma seção de avisos e votações no aplicativo |
+| Gestão ineficiente das áreas comuns do condomínio | Disponibilização de áreas comuns | Possível desentendimento entre os condôminos acerca do uso das áreas comuns | Fazer o gerenciamento através do aplicativo, facilitando a comunicação entre todas as partes |
+
+### 2.3 Instrução de Posição do Produto
+
+Para condomínios residenciais que enfrentam desafios na administração, o sistema de gestão de condomínio é uma solução inovadora de software para gestão condominial que simplifica e otimiza processos administrativos. Ao contrário das soluções tradicionais de gestão manual, nosso produto se destaca ao proporcionar automação eficiente, transparência financeira, agendamento simplificado de áreas comuns e comunicação instantânea.
+
+Assim sendo, acreditamos veementemente que nosso produto oferece uma abordagem moderna e abrangente para a gestão de condomínios, proporcionando eficiência e melhorando a experiência tanto para administradores quanto para moradores.
+
+## 3. Descrições da parte interessada e dos usuários
+
+Em um contexto de gestão condominial comum, os síndicos, isto é, os administradores de condomínio encarregados da operação, enfrentam desafios relacionados à desorganização administrativa, controle de acesso e gestão financeira. Os moradores, por sua vez, experimentam dificuldades no agendamento de áreas comuns, falta de transparência nas despesas e problemas na comunicação interna.
+
+Dessa forma, esse projeto visa atender às diversas necessidades das partes interessadas e usuários envolvidos no ambiente condominial, oferecendo uma plataforma abrangente que melhora a eficiência operacional, promove transparência e facilita a comunicação, satisfazendo as demandas específicas de cada grupo envolvido na administração condominial.
+
+### 3.1 Demográficos de Mercado
+
+Os demográficos de mercado para o CondoEasy abrangem condomínios residenciais em áreas urbanas e suburbanas. O mercado-alvo inclui condomínios verticais e horizontais, refletindo um setor imobiliário residencial em crescimento constante. O número considerável de condomínios urbanos indica um amplo potencial de mercado.
+
+Por outro lado, potenciais usuários englobam administradores, moradores, equipes de manutenção e gestores financeiros. A quantia gasta atualmente para atender às necessidades não atendidas por soluções tradicionais representa uma oportunidade financeira significativa.
+
+As tendências do mercado destacam a demanda por soluções tecnológicas eficazes na administração condominial. Além disso, é inegável o desejo por um provedor confiável e inovador, se posicionando como a organização líder no setor. Portanto, o sistema suporta esses objetivos ao promover eficiência operacional e satisfação do cliente, consolidando uma presença forte no mercado de gestão condominial.
+
+### 3.2 Resumo da Parte Interessada
+
+| **Grupo** | **Descrição** | **Responsabilidade** |
+| --- | --- | --- |
+| Equipe de Desenvolvimento | Estudantes da disciplina de Engenharia de Software, do curso SI – UFU. | Desempenha papel crucial na implementação e uso eficaz do sistema, garantindo a eficiência operacional e resolução de desafios administrativos, além de manutenção dele oferecendo suporte ao usuário e resolução de problemas que podem acabar enfrentando |
+| Cliente | Síndicos/Moradores dos condomínios. | Contribui para a aceitação e uso do sistema, fornecendo insights sobre as necessidades dos moradores e participando ativamente na comunicação interna. |
+| Gestores Financeiros | Representa profissionais com conhecimento adequado do setor. | Auxiliar e retirar dúvidas das equipes de desenvolvimento e gestão. |
+| Professora | Professora do curso de Engenharia de Software, SI – UFU. | Orientar e avaliar o sistema acerca de possíveis melhorias e adequações que ele pode vir a sofrer com o tempo. |
+
+### 3.3 Resumo de Usuários
+
+| **Grupo** | **Descrição** | **Responsabilidade** |
+| --- | --- | --- |
+| Síndicos | Síndico/administradores interessados em realizar a gestão eficiente de seu condomínio com o sistema. | Administração e operação do condomínio, utilizando o sistema para gerenciar processos administrativos, controle de acesso etc. |
+| Moradores | Aquele que pretende usar os recursos do condomínio e estar ciente de eventos que possam vir a ocorrer. | Utilizar o sistema para agendar áreas comuns, acessar informações relevantes do condomínio, participar ativamente da comunidade virtual, pagamento de taxa condominial, entre outros. |
+
+### 3.4 Ambiente do Usuário
+
+Dado o ambiente num ponto de vista mais abstrato, isto é, de mais alto nível, sistema é direcionado a membros da administração, síndicos e moradores em contextos condominiais. A primazia da usabilidade se evidencia diante da diversidade na proficiência tecnológica dos usuários. As atividades diárias, tais como cadastro, emissão de boletos, comunicação interna, registro de ocorrências e gestão de áreas comuns, requerem uma abordagem intuitiva e acessível, considerando a variedade de perfis presentes nesse cenário.
+
+Dessa forma, é requerido um dispositivo móvel para que o CondoEasy seja utilizado, tanto para os moradores, quanto para o síndico. Os usuários utilizarão o aplicativo ao verem a necessidade de conferir alguma informação do condomínio ou de realizarem alguma ação como agendamento de área comum, pagamento de taxa, reclamação etc. Sempre que algum aviso sobre o condomínio do usuário for postado, ele receberá uma notificação, assim como quando tiver a necessidade de pagar a taxa condominial.
+
+Já em um posto de vista mais técnico, o acesso ao sistema se efetua por meio de um aplicativo móvel, desenvolvido utilizando tecnologias como React Native ou Flutter, visando a uniformidade na experiência em ambas as plataformas (iOS e Android). A segurança ganha destaque, com uma autenticação robusta e medidas de proteção de dados. A integração cuidadosa com APIs para serviços externos está em foco, excluindo integrações diretas com outros aplicativos de mensagens externas para manter a simplicidade e centralização da comunicação no próprio aplicativo.
+
+Versões mínimas para de sistema operacional de dispositivos móveis:
+
+| **Sistema** | **Versão** |
+| --- | --- |
+| *Android* | >= 6.0 |
+| *IOS* | >= 14 |
+
+### 3.5 Perfil dos Envolvidos
+
+#### 3.5.1 Equipe de Desenvolvimento
+
+| **Representantes** | **Heitor Filho e Igor Augusto** |
+| --- | --- |
+| **Descrição** | Desenvolvedores. |
+| **Tipo** | Estudantes da UFU na disciplina de Engenharia de Software |
+| **Responsabilidade** | Desenvolvimento, documentação, implementação e Testes do *software*. |
+| **Critérios de Sucesso** | Concluir devidamente o *software* e disponibilizá-lo ao público-alvo. |
+| **Envolvimento** | Alto. |
+| **Problemas/Comentários** | Inexperiência em relação às linguagens, metodologias e paradigmas que serão aplicadas ao projeto. |
+
+#### 3.5.2 Equipe de Gestão de Projeto
+
+| **Representantes** | **Heitor Filho e Igor Augusto** |
+| --- | --- |
+| **Descrição** | Gerenciamento de projeto. |
+| **Tipo** | Estudantes da UFU na disciplina de Engenharia de Software. |
+| **Responsabilidade** | Coordenar, auxiliar e orientar a equipe de desenvolvimento de *software*, além de fundamentar o projeto. |
+| **Critérios de Sucesso** | Gerir adequadamente o desenvolvimento, tratar riscos e entregar o produto. |
+| **Envolvimento** | Alto. |
+| **Problemas/Comentários** | Necessidade de aumentar o time de desenvolvimento. |
+
+### 3.6 Perfil dos Usuários
+
+#### 3.6.1 Síndicos
+
+| **Representante** | **Síndicos** |
+| --- | --- |
+| **Descrição** | Encarregado da administração e supervisão, utilizando o sistema de gestão condominial. |
+| **Tipo** | Síndico. |
+| **Responsabilidade** | Configurar e gerenciar o sistema, garantir informações atualizadas, monitorar relatórios e tomar decisões informadas. |
+| **Critérios de Sucesso** | Eficiência na administração, segurança de dados, resolução eficaz de problemas técnicos. |
+| **Envolvimento** | Treinamento constante para utilização, liderança na adoção, interação com moradores para feedback e melhorias. |
+| **Problemas/Comentários** | Resistência à adaptação, complexidade técnica, necessidade de suporte técnico constante. |
+
+### 3.6.2 Moradores
+
+| **Representante** | **Moradores** |
+| --- | --- |
+| **Descrição** | Membro que utiliza o sistema para agendamento, pagamento de taxas, relato de ocorrências e comunicações internas. |
+| **Tipo** | Morador. |
+| **Responsabilidade** | Utilizar o sistema para interações, pagamentos, relatos de ocorrências, participar em comunicações internas. |
+| **Critérios de Sucesso** | Facilidade de uso, eficiência no agendamento, compreensão clara de informações financeiras e de eventos. |
+| **Envolvimento** | Participação ativa nas funcionalidades, fornecimento de feedback para melhorias, uso responsável das ferramentas disponíveis. |
+| **Problemas/Comentários** | Resistência à adoção, dificuldade de navegação, preocupações com privacidade de dados, ou até falta de acesso à internet. |
+
+### 3.7 Principais Necessidades dos Usuários e dos Envolvidos
+
+| Necessidade | Prioridade | Interesses | Solução Atual | Solução Proposta |
+| --- | --- | --- | --- | --- |
+| **Automação de Processos Administrativos** | Alta | Agilidade, Redução de Desorganização | Processos manuais, documentação em papel | Disponibilizar na aplicação um menu com os produtos associados ao vendedor. |
+| **Eficiência na Gestão Financeira** | Alta | Controle, Redução de Erros | Emissão manual de boletos, riscos de inconsistências | Sistema automatizado de emissão de boletos, integração com dados financeiros, proporcionando controle eficiente |
+| **Registro Digital de Ocorrências** | Média | Organização, Resolução Rápida | Registros físicos ou planilhas | Sistema integrado para registros digitais, facilitando a organização e resolução eficiente de ocorrências |
+| **Controle de Acesso Eficiente** | Média | Segurança, Monitoramento | Utilização de chaves físicas, lista manual de acesso | Implementação de um sistema digital para controle de acesso, registro e monitoramento em tempo real |
+
+## 4. Visão Geral do Produto
+
+### 4.1 Perspectiva do Produto
+
+O CondoEasy é uma solução independente e autocontida, projetada para otimizar a administração condominial. Ele atua como um componente central, conectando os diversos aspectos da gestão, desde o cadastro de moradores até a emissão de boletos e o controle de acesso. O produto interage com sistemas externos, como serviços de pagamento para processamento de boletos e pode ser integrado a sistemas de segurança física para reforçar o controle de acesso.
+
+Portanto, será desenvolvido como um aplicativo móvel, proporcionando aos usuários a conveniência de acessar todas as funcionalidades por meio de seus dispositivos móveis. O aplicativo será disponibilizado nas principais plataformas móveis, como iOS e Android, oferecendo uma experiência de usuário otimizada para smartphones e tablets. A integração será estendida para permitir a comunicação eficaz com outros aplicativos e dispositivos relevantes.
+
+### 4.2 Resumo das Capacidades
+
+| **Benefício para o cliente** | **Recursos** |
+| --- | --- |
+| Gestão eficiente do cadastro de moradores. | Interface mobile responsiva, com *design* intuitivo para cadastro e atualização de informações, portanto tanto UI quanto UX adequadas seguindo boas práticas. |
+| Emissão automática de boletos. | Sistema integrado de gestão financeira por meio de integração com API de serviços de pagamento online, histórico de pagamentos/transações. |
+| Registro digital de ocorrências. | Ferramenta mobile para registro, acompanhamento e resolução de ocorrências. |
+| Controle de acesso eficiente. | Sistema digital de controle de acesso, integração com tecnologias móveis. |
+| Agendamento de Áreas Comuns. | Calendário integrado para reserva de espaços comuns, com informações de disponibilidade. |
+
+### 4.3 Licenciamento e Instalação
+
+Inicialmente, supõe-se que os usuários possuam dispositivos móveis compatíveis com o aplicativo, rodando as versões mais recentes dos sistemas operacionais iOS ou Android. Além disso, no que diz respeito de dependências, há a de serviços externos, como processamento de pagamento, está sujeita às políticas e disponibilidade desses serviços
+
+Por outro lado, acerca de licenciamento e instalação propriamente ditos, o aplicativo será disponibilizado para download gratuito, com funcionalidades básicas. Já os recursos avançados e acesso completo exigirão uma assinatura paga, associada ao número de unidades no condomínio. Por fim, a instalação será realizada pelos usuários por meio das lojas de aplicativos oficiais, seja pela *Google Play* ou *App Store (Apple).*
+
+## 5. Recursos do Produto
+
+### 5.1 Cadastro
+
+Tanto o síndico quanto o morador realizarão o cadastro, porém incialmente o síndico insere informações básicas do condomínio (endereço, tipo de condomínio, valor da taxa condominial, áreas comuns, rotinas de manutenção, entre outros), havendo uma verificação de dados para garantir precisão por intermédio de upload de documentos
+
+### 5.2 Login
+
+Autenticação do usuário por meio de credenciais únicas, com recuperação de senha segura, além de registro de atividades de login para segurança, permitindo assim, o acesso seguro e individualizado dos usuários ao sistema mediante *login*.
+
+### 5.3 Gestão de Moradores
+
+Possibilita o gerenciamento eficiente dos moradores no contexto condominial, sendo possível a visualização e edição de informações cadastrais, registro e acompanhamento de mudanças de moradores, tratando-se de um recurso destinado aos usuários com funções administrativas, como síndicos e membros da administração do condomínio.
+
+### 5.4 Emissão de Boletos
+
+Possibilidade de automatizar a geração e controle de boletos de taxa condominial, isto é, os residentes serão capazes de gerar boletos de forma automática com base nas informações financeiras, visualizar histórico de pagamentos além de controle de inadimplência, com Notificações de vencimento e confirmação de pagamento.
+
+### 5.5 Registro de Ocorrências
+
+Será oferecido ao usuário um sistema digital para registro e acompanhamento de ocorrências, permitindo um registro detalhado de eventos e problemas, acompanhamento do status e resolução, além de comentários e interações sobre cada ocorrência.
+
+### 5.6 Controle de Acesso
+
+Os moradores poderão gerenciar de forma digital e segura o acesso às áreas comuns do condomínio, como salão de festas, quadras esportivas etc. Além disso, serão possibilitados de terem acesso a um registro em tempo real de entradas e saídas, com monitoramento remoto.
+
+### 5.7 Agendamento de Áreas Comuns
+
+Os condôminos terão facilidade no agendamento e reserva de áreas compartilhadas, com acesso a um calendário integrado para visualização de disponibilidade e possível efetuação de reservas online com confirmação automática, além de notificações de eventos agendados.
+
+## 6. Restrições
+
+### 6.1 Restrições de Design
+
+O sistema precisa ser atrativo aos usuários e ao mesmo tempo de fácil uso.
+
+### 6.2 Restrições de Implementação
+
+O usuário acessará o sistema pelo aplicativo mobile feito com JavaScript com o framework React Native, que permite o desenvolvimento em ambas as plataformas Android e IOS. A aplicação mobile fará requisições para uma API feita em Java com o framework Spring Boot que realizará algumas rotinas antes de consultar o banco de dados relacional que será feito em PostgreSQL, fazendo uso da plataforma Supabase para controle do banco.
+
+### 6.3 Restrições de Segurança
+
+Todo o sistema ficará em um servidor em nuvem com acesso a banco de dados. Por conta de segurança o aplicativo será desenvolvido com um conjunto de ferramentas que certifiquem a segurança de acesso.
+
+### 6.4 Restrições de Uso
+
+Para o uso do sistema é necessário que o usuário tenha um dispositivo móvel com SO Android (versão >=6.0) ou iOS (versão >=14) e instale o aplicativo disponível na Google Play e App Store, ambas lojas de aplicativos de tais SO mencionados. Por fim, é estritamente necessária uma conexão com a internet.
+
+## 7. Referências Bibliográficas
+
+IBM. *Especificação e Estrutura do Documento de Visão*. Disponível em: https://www.ibm.com/docs/pt-br/engineering-lifecycle-management-suite/lifecycle-management/7.0.2?topic=requirements-vision-document. Acesso em: 22 ago. 2024.
