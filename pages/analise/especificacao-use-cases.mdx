@@ -1,0 +1,428 @@
+# Especificação de Casos de Uso
+
+## Aprovar cadastro de usuário
+
+### Descrição
+
+O administrador do sistema poderá aprovar ou rejeitar as solicitações de cadastro dos usuários.
+
+### Atores
+
+Administrador.
+
+### Precondições
+
+O administrador deve estar logado no sistema CondoEasy e deve haver solicitações de cadastro pendentes aguardando aprovação.
+
+### Pós-Condições
+
+O cadastro do usuário será aprovado ou rejeitado e o usuário será notificado sobre a decisão.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Aprovar cadastro de usuário**
+
+PASSOS:
+
+1. *O administrador acessa o sistema e navega até a página de solicitações de cadastro.*
+2. *O sistema exibe a lista de solicitações com as informações submetidas pelos usuários.*
+3. *O administrador aprova ou rejeita a solicitação.*
+4. *O sistema notifica o usuário sobre a decisão.*
+
+#### Fluxos Alternativos
+
+**FA1. Informações insuficientes para aprovação**
+
+> No passo 3, caso o administrador identifique que as informações do cadastro estão insuficientes ou incorretas, o sistema deve realizar os seguintes passos:
+>
+
+1. *O sistema retorna à solicitação para o usuário com uma mensagem indicando os campos que precisam ser revisados.*
+2. *O usuário poderá corrigir os campos informados e enviar a solicitação novamente.*
+
+## Solicitar cadastro
+
+### Descrição
+
+O usuário pode solicitar o cadastro no sistema, seja como morador ou visitante, fornecendo suas informações pessoais.
+
+### Atores
+
+Morador e visitante.
+
+### Precondições
+
+O usuário não pode estar autenticado.
+
+### Pós-Condições
+
+O cadastro do usuário será aprovado ou rejeitado, e o usuário será notificado sobre a decisão.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Aprovar cadastro de usuário**
+
+PASSOS:
+
+1. *O usuário acessa o sistema e seleciona a opção de "Cadastrar".*
+2. *O sistema exibe um formulário para o usuário preencher as informações necessárias.*
+3. *O usuário preenche o formulário e clica em "Enviar".*
+4. *O sistema valida os dados básicos e confirma o recebimento da solicitação de cadastro.*
+5. *A solicitação é enviada para a administração para revisão e aprovação.*
+
+#### Fluxos Alternativos
+
+**FA1. Informações insuficientes para aprovação**
+
+> No passo 4, se o sistema identificar que algum campo obrigatório foi preenchido incorretamente, deve ser realizado a seguinte ação:
+> 
+1. *Exibir uma mensagem de erro informando quais campos estão incorretos ou faltando.*
+
+**FA2. Usuário já cadastrado**
+
+> No passo 3, se o sistema identificar que o usuário já possui um cadastro ativo, o sistema deve realizar os seguintes passos:
+> 
+1. *Exibir mensagem informando que o usuário já está cadastrado*
+
+## Realizar login
+
+### Descrição
+
+O usuário poderá se autenticar, fornecendo suas credenciais para acessar as funcionalidades do sistema.
+
+### Atores
+
+Administrador, morador e visitante.
+
+### Precondições
+
+O usuário deve possuir um cadastro ativo no sistema, não estar autenticado e estar na tela de login do CondoEasy.
+
+### Pós-Condições
+
+O usuário será autenticado e poderá acessar as funcionalidades do sistema de acordo com o tipo do seu perfil.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Aprovar cadastro de usuário**
+
+PASSOS:
+
+1. *O usuário acessa a tela de login e é solicitado que o seu login*
+2. *O usuário preenche os campos e clica em "Entrar".*
+3. *O sistema valida as credenciais fornecidas e o redireciona para a página inicial.*
+
+#### Fluxos Alternativos
+
+**FA1. Credenciais inválidas**
+
+> No passo 3, se o sistema identificar que as credenciais estão incorretas deve ser feito os seguintes passos:
+> 
+1. *O sistema exibe uma mensagem de erro informando que o login está incorreto.*
+
+## Acompanhamento de Cobranças e Emissão de Boletos
+
+### Descrição
+
+Acompanhamento de cobranças relacionadas ao seu perfil e emissão de boletos referentes a locações e multas.
+
+### Atores
+
+Morador.
+
+### Precondições
+
+O usuário deve estar autenticado e possuir cobranças pendentes associadas ao seu perfil.
+
+### Pós-Condições
+
+O usuário poderá visualizar suas cobranças e emitir a fatura para o pagamento. O sistema registrará a emissão do boleto e atualizará o status da cobrança conforme o pagamento for efetuado.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Acompanhamento de Cobranças**
+
+PASSOS:
+
+1. *O usuário acessa a seção de "Faturas".*
+2. *O sistema exibe uma lista de cobranças pendentes associadas ao perfil do usuário.*
+3. *Ao abrir uma cobrança será exibido um botão “Gerar fatura”.*
+4. *O sistema gera a fatura com as informações da cobrança e disponibiliza para download.*
+
+#### Fluxos Alternativos
+
+**FA1. Sem cobranças pendentes**
+
+> No passo 2, se for identificado nenhuma cobrança pendente, o sistema deve:
+> 
+1. *Exibir uma mensagem informando que não há cobranças associadas ao usuário.*
+
+## Emissão de Cobranças
+
+### Descrição
+
+Emissão de cobranças para moradores do condomínio referentes a multas, locações e outras cobranças.
+
+### Atores
+
+Administrador.
+
+### Precondições
+
+O Administrador deve estar autenticado e deve haver um Morador cadastrado para associar à cobrança.
+
+### Pós-Condições
+
+A cobrança será emitida e registrada em um banco de dados e o Morador associado será notificado.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Emissão de Cobranças**
+
+PASSOS:
+
+1. *O administrador se direciona para a seção de “Cobranças” através do Menu.*
+2. *O administrador seleciona um usuário morador e gera uma cobrança através do formulário de cobranças.*
+3. *O usuário é notificado e o administrador recebe uma confirmação visual através do sistema.*
+
+## Locação de Áreas Comuns
+
+### Descrição
+
+Possibilita a solicitação de locação de áreas comuns do condomínio.
+
+### Atores
+
+Morador.
+
+### Precondições
+
+O usuário deve estar autenticado e o condomínio o qual está inserido deve ter ao menos uma área comum disponível para aluguel.
+
+### Pós-Condições
+
+A solicitação será enviada para a administração e o usuário será notificado sobre a confirmação ou a recusa da solicitação, logo, a área comum será marcada como reservada dependendo do status da solicitação.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Solicitar locação de área comum**
+
+PASSOS:
+
+1. *O usuário acessa a seção de "Áreas comuns".*
+2. *O sistema exibe a lista de áreas comuns disponíveis do condomínio.*
+3. *O usuário seleciona a área comum desejada e o período de locação e clica em* "Enviar Solicitação"*.*
+4. *A solicitação é encaminhada para o administrador para revisão e aprovação.*
+
+#### Fluxos Alternativos
+
+**FA1. Área comum já reservada**
+
+> No passo 3, se o sistema identificar que a área comum desejada já está reservada para o período selecionado, o sistema deve:
+> 
+1. *Exibir uma mensagem informando que a área comum não está disponível para o período escolhido.*
+2. *Permitir que o usuário selecione uma nova data ou área comum.*
+
+## Aprovação de Locação de áreas comuns
+
+### Descrição
+
+Permite que a administração aprove ou rejeite solicitações de locação de áreas comuns do condomínio.
+
+### Atores
+
+Administrador
+
+### Precondições
+
+Deve estar autenticado com privilégios de administrador no sistema e deve haver solicitações de locação pendentes aguardando aprovação.
+
+### Pós-Condições
+
+A solicitação será aprovada ou rejeitada notificando o usuário sobre a decisão, e a área comum será marcada conforme o status da solicitação.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Aprovar locação de área comum**
+
+PASSOS:
+
+1. *O administrador acessa a seção de "Solicitações de Locação".*
+2. *O sistema exibe a lista de solicitações pendentes.*
+3. *O administrador seleciona e revisa a solicitação, decidindo aprovar ou rejeitar.*
+4. *Caso a decisão seja aprovada a área comum é marcada como reservada.*
+5. *O sistema notifica o usuário sobre a decisão da solicitação.*
+
+## Monitoramento de Acesso
+
+### Descrição
+
+A administração poderá monitorar em tempo real as vias comuns do condomínio, acessar registros de imagens e logs de acessos anteriores.
+
+### Atores
+
+Administrador.
+
+### Precondições
+
+O administrador deve estar autenticado no sistema com permissões para monitorar o acesso e acessar as câmeras de segurança.
+
+### Pós-Condições
+
+A administração terá monitorado o acesso às áreas comuns e visualizado os registros das câmeras de segurança.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Monitoramento de acesso**
+
+PASSOS:
+
+1. *O administrador acessa a seção de "Monitoramento de Acesso".*
+2. *O sistema exibe as câmeras de segurança das vias comuns do condomínio em tempo real. Permitindo ao administrador rever registros de acessos anteriores e consultar logs de entrada e saída de moradores e visitantes.*
+
+#### Fluxos Alternativos
+
+**FA1. Problema de Conexão com Câmeras**
+
+> No passo 2, se o sistema não conseguir conectar-se com o sistema de câmeras de segurança, os seguintes passos são realizados:
+> 
+1. *O sistema exibe uma mensagem de erro informando que a conexão com as câmeras falhou.*
+
+## Registro de Ocorrências
+
+### Descrição
+
+O usuário irá registrar fatos ocorridos no condomínio, como barulhos altos ou atividades suspeitas, para que a administração possa tomar as medidas necessárias.
+
+### Atores
+
+Morador.
+
+### Precondições
+
+O administrador deve estar autenticado no sistema.
+
+### Pós-Condições
+
+A ocorrência será registrada no sistema e a administração será notificada para tomar as devidas providências.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Registro de Ocorrência**
+
+PASSOS:
+
+1. *O usuário acessa a seção de "Registrar Ocorrência".*
+2. *O sistema exibe um formulário onde o usuário descreve o fato ocorrido.*
+3. *O usuário preenche o formulário com os detalhes e clica em "Enviar".*
+4. *O sistema confirma o sucesso na requisição e notifica a administração.*
+
+## Solicitações Gerais
+
+### Descrição
+
+O usuário pode utilizar o sistema para fazer solicitações de serviços do condomínio, como agendamento de reparos, limpeza ou outras solicitações gerais.
+
+### Atores
+
+Morador.
+
+### Precondições
+
+O usuário deve estar autenticado no sistema.
+
+### Pós-Condições
+
+A solicitação será registrada e enviada para a administração.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Solicitação de Serviços**
+
+PASSOS:
+
+1. *O usuário acessa a seção de "Solicitar serviço".*
+2. *O sistema exibe um formulário onde o usuário descreve o serviço solicitado.*
+3. *O usuário preenche o formulário com os detalhes e clica em "Enviar".*
+4. *O sistema confirma o sucesso na requisição e notifica a administração.*
+
+## Personalização de Perfil
+
+### Descrição
+
+O usuário pode utilizar o sistema para cadastrar ou editar seus dados e adicionar informações ao seu perfil.
+
+### Atores
+
+Morador.
+
+### Precondições
+
+O usuário deve estar autenticado no sistema.
+
+### Pós-Condições
+
+As informações cadastradas ou editadas precisam ser salvas no banco de dados do sistema.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Personalização de Perfil**
+
+PASSOS:
+
+1. *O usuário acessa a seção de "Perfil".*
+2. *O sistema exibe os dados do perfil do usuário e uma opção de edição.*
+3. *O usuário acessa o formulário com os detalhes do perfil através da opção de perfil e pode editar ou adicionar informações, garantindo sua permanência ao clicar em "Salvar".*
+4. *O sistema confirma o sucesso na requisição e oferece uma resposta visual ao usuário.*
+
+## Acompanhamento e resposta de ocorrências e solicitações gerais
+
+### Descrição
+
+O administrador pode acompanhar e responder ocorrências e solicitações realizadas por usuários.
+
+### Atores
+
+Administrador.
+
+### Precondições
+
+O administrador deve estar autenticado no sistema. Deve haver solicitações realizadas por usuários.
+
+### Pós-Condições
+
+A resposta deve ser cadastrada no banco de dados e retornada ao morador que está registrando.
+
+### Fluxo de Eventos
+
+#### Fluxo Básico (Principal)
+
+**FB. Acompanhamento e Resposta de Ocorrências e Solicitações Gerais**
+
+PASSOS:
+
+1. *O administrador acessa a seção de "Ocorrências e Solicitações Gerais".*
+2. *O sistema exibe os dados de solicitações e ocorrências registradas com detalhes.*
+3. *O administrador acessa a solicitação e pode acessar o formulário de resposta.*
+4. *O administrador registra a resposta e o usuário relacionado é notificado.*

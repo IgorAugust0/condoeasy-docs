@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Lightbox = ({ src, alt }) => {
+export default function Lightbox({ src, alt }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleLightbox = () => setIsOpen(!isOpen);
@@ -16,9 +16,9 @@ const Lightbox = ({ src, alt }) => {
       />
       {isOpen && (
         <div
+          onClick={toggleLightbox}
           className="lightbox-overlay"
           // className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm"
-          onClick={toggleLightbox}
         >
           <img
             src={src}
@@ -57,6 +57,4 @@ const Lightbox = ({ src, alt }) => {
       `}</style>
     </>
   );
-};
-
-export default Lightbox;
+}

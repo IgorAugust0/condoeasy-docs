@@ -1,1 +1,278 @@
 # Documento de Requisitos
+
+## 1. Introdução
+
+Inicialmente, vale ressaltar que este documento tem como objetivo principal fornecer uma descrição detalhada dos requisitos do sistema CondoEasy. Por meio deste, pretende-se estabelecer uma compreensão clara, abrangente e compartilhada entre todos os stakeholders sobre as diversas funcionalidades e especificações que o sistema deverá atender. Ele servirá como uma referência fundamental e essencial para o desenvolvimento e validação do sistema, orientando tanto os desenvolvedores quanto os analistas, arquitetos e outros profissionais envolvidos no projeto.
+
+### 1.1 Objetivos
+
+Tratando-se de objetivos, o principal é definir com precisão os requisitos do sistema, detalhando o que deve ser feito e como deve funcionar. Por consequência, ele visa assegurar que todas as partes interessadas compreendam de maneira abrangente todas as capacidades e limitações do sistema proposto. Além disso, pretende-se que este documento forneça uma base sólida e robusta para o processo de desenvolvimento, permitindo que as funcionalidades sejam implementadas de acordo com as necessidades e expectativas do cliente, garantindo, assim, a entrega de um produto final que atenda plenamente às expectativas e aos padrões de qualidade previamente estabelecidos.
+
+### 1.2 Escopo
+
+No que diz respeito ao escopo deste documento, ele abrange a especificação detalhada e completa de todos os requisitos necessários para a construção do CondoEasy, incluindo tanto os requisitos funcionais, que descrevem o que o sistema deve fazer, quanto os requisitos não funcionais, que especificam as qualidades que o sistema deve possuir. Ele será utilizado por toda a equipe de desenvolvimento, analistas, arquitetos e demais profissionais envolvidos no projeto, além de ser compreensível para o cliente e outras partes interessadas.
+
+Portanto, o objetivo é que este documento funcione como um guia abrangente, detalhado e consistente para todas as fases do desenvolvimento, garantindo que o sistema seja implementado de forma coesa, eficiente e alinhada, atendendo a todas as demandas e restrições previamente estabelecidas.
+
+### 1.3 Visão Geral do Documento
+
+A seguir são apresentadas as divisões deste documento e uma rápida descrição de cada seção:
+
+- Seção 2 – Descrição Geral do Sistema: descreve o escopo do sistema e seus usuários de maneira geral.
+- Seção 3 – Requisitos Funcionais: específica todos os requisitos funcionais planejados para o sistema.
+- Seção 4 – Requisitos Não-Funcionais: especifica todos os requisitos não-funcionais da primeira iteração do sistema.
+- Seção 5 – Requisitos de Interface.
+
+### 1.4 Padrões e Convenções
+
+#### 1.4.1 – Identificação dos Requisitos
+
+Para a especificação dos requisitos utilizaremos a seguinte representação:
+
+[TIPODOREQUISITONúmero] *Nome*
+
+O campo TIPODOREQUISITO poderá ser especificado pelos códigos RF (Requisitos Funcionais) ou RNF (Requisitos Não-Funcionais). Já o campo Número será preenchido com um número correspondente à ordem em que os requisitos aparecem no documento.
+
+#### 1.4.2 – Prioridade dos Requisitos
+
+A cada requisito será atribuída uma prioridade. A descrição de cada uma segue abaixo:
+
+- Essencial é um requisito imprescindível. Sem ele, o sistema não funcionará.
+- Importante é um requisito que deve ser implementado, mas, se não for, o sistema funcionará do mesmo jeito, mas de maneira insatisfatória.
+- Desejável é um requisito que trará um diferencial adicional ao sistema. Por isso, pode ser deixado para ser implementado por último ou em próximas iterações.
+
+## 2. Descrição Geral do Sistema
+
+Devido à expansão dos ambientes urbanos e aos problemas de segurança e privacidade trazidos por ela, moradores de cidades cada vez mais têm buscado condomínios em que possam garantir monitoramento e controle da ida e vinda de pessoas. Nesse contexto, um sistema de gestão de condomínios se torna necessário, e o CondoEasy surge como uma solução para esse problema, visto que a realização dessa gestão de maneira manual se torna inefetiva e vulnerável a erros.
+
+As soluções já presentes no mercado, ainda que atendam a necessidade, demonstram problemas de integração e facilidade de uso, e acabam por não atenderem todas as necessidades de todos os condomínios, centralizando completamente o cadastro de usuários e visitantes, e agendamento de eventos em áreas comuns do condomínio totalmente no staff do condomínio, gerando ineficiência devido a uma elevada carga de trabalho e solicitações que devem ser todas tratadas pessoalmente.
+
+Nesse contexto, surge o CondoEasy, um aplicativo móvel propondo uma maior integração e participação do usuário, permitindo o envio de solicitações e comunicação entre usuários e staff através do sistema, otimizando recursos e o tempo da administração. Além disso, documentos, boletos e multas também podem ser acessados através do sistema.
+
+### 2.1 Escopo Negativo
+
+A presente documentação cumpre o papel essencial de delinear, de forma clara e precisa, os limites do sistema em desenvolvimento, especificando detalhadamente os elementos que não estão compreendidos no escopo do projeto. Esta definição é de suma importância para evitar quaisquer mal-entendidos e garantir que todas as partes interessadas mantenham um alinhamento claro e inequívoco.
+
+Nesse sentido, não estão incluídas neste projeto atividades como o desenvolvimento de **funcionalidades adicionais**, uma vez que apenas as funcionalidades explicitamente descritas serão implementadas.
+
+Além disso, o sistema não oferecerá a possibilidade de **personalizações extensivas** na interface do usuário, sendo limitadas às opções básicas já fornecidas.
+
+No que tange ao **suporte a idiomas**, o sistema será inicialmente lançado apenas em português, não incluindo recursos de tradução automática ou suporte a múltiplos idiomas nesta versão específica.
+
+Quanto à **gestão financeira**, as funcionalidades estarão restritas a operações básicas, como a emissão de boletos e o acompanhamento de cobranças, não contemplando módulos mais avançados, tais como relatórios detalhados e análises financeiras.
+
+Por fim, no que se refere à **auditoria**, o sistema não armazenará um histórico completo de todas as mudanças realizadas. As funcionalidades de auditoria serão limitadas e focadas em aspectos principais, como transações financeiras e alterações críticas de configurações do sistema.
+
+## 3. Requisitos Funcionais
+
+Esta seção apresenta em detalhes os requisitos funcionais do sistema.
+
+### 3.1 Ações do Administrador do Sistema
+
+#### 3.1.1 - [RF001] Aprovar cadastro de usuário
+
+Requisito básico para permitir que os usuários entrem no sistema como distribuidores. A administração deve poder aprovar o cadastro solicitado pelo usuário.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.1.2 - [RF005] Emissão de cobranças
+
+Uma das principais funcionalidades do sistema. Permite que a administração emita cobranças para moradores referentes a multas e locações de espaços comuns.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.1.3 - [RF007] Aprovação de Locação de Áreas Comuns
+
+Uma das principais funcionalidades do sistema. Permite que a administração aprove solicitações de locação de áreas comuns do condomínio.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.1.4 - [RF008] Monitoramento de Acesso e Integração com Câmeras de Segurança
+
+Uma das principais funcionalidades do sistema. Permite que a administração receba alertas em tempo real de acesso não autorizado e consiga monitorar em tempo real as vias comuns do condomínio, bem como ter acesso a registros de imagens e *logs* de acessos anteriores.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.1.5 - [RF011] Acompanhamento e Resposta de Ocorrências e Solicitações Gerais
+
+Uma das principais funções do sistema. Permite que o administrador responda a solicitações e ocorrências geradas por usuários do sistema.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 3.2 Ações do Usuário
+
+#### 3.2.1 - [RF002] Solicitar Cadastro
+
+Uma das principais funções do sistema. Permite que o usuário solicite o cadastro de morador ou visitante.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.2.2 - [RF003] Realizar Login
+
+Uma das principais funções do sistema. Permite que o usuário se autentique no sistema.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.2.3 - [RF004] Acompanhamento de Cobranças e Emissão de Boletos
+
+Uma das principais funções do sistema. Permite que o usuário acompanhe cobranças associados ao seu perfil e emita boletos referentes a referentes a locação e multas.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.2.4 - [RF006] Solicitação de Locação de Áreas Comuns
+
+Uma das principais funções do sistema. Permite que o usuário solicite a locação de áreas comuns do condomínio para a administração.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.2.5 - [RF009] Registro de Ocorrências e Solicitações Gerais
+
+Uma das principais funções do sistema. Permite que o usuário registre fatos ocorridos que causem problemas aos moradores, como barulhos altos, reparos a serem feitos, atividade suspeita, bem como solicitação de serviços do condomínio.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 3.2.6 - [RF010] Personalização de Perfil
+
+Uma das principais funções do sistema. Permite que o usuário cadastre dados importantes, como número de documento, dados de contato, contatos de emergência etc.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+## 4. Requisitos Não-Funcionais
+
+Esta seção apresenta os requisitos não-funcionais do sistema em detalhes. Todos os requisitos não-funcionais aqui apresentados são essenciais para o bom funcionamento do sistema.
+
+### 4.1 Performance
+
+#### 4.1.1 - [NF001] Tempo de resposta
+
+O tempo de resposta de uma consulta de um usuário deve ser de no máximo 05 segundos.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.1.2 - [NF002] - Desempenho em Condições de Pico
+
+Manter o sistema eficiente mesmo em períodos de alta demanda, assegurando que a resposta seja rápida e consistente durante momentos de carga máxima
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.1.3 - [NF003] Escalabilidade
+
+Projetar o sistema para suportar expansões futuras em termos de número de usuários e funcionalidades, sem comprometer o desempenho. Garantir flexibilidade para acompanhar o crescimento do uso.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 4.2 Usabilidade
+
+#### 4.2.1 - [NF004] Interface gráfica com o usuário
+
+A interface deverá ser amigável, simples e intuitiva. A preocupação com as duas últimas características é devida ao fato de possivelmente o usuário não ter muita experiência com o uso do computador. Desta forma, as mensagens de erro devem ser explicativas, de modo a mostrar ao usuário como ele deve agir.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.2.2 - [NF005] Existência de Help
+
+O sistema deve disponibilizar um *help*, para esclarecer eventuais dúvidas dos usuários.
+
+| **Prioridade** | ◻ Essencial | ◻ Importante | ✅ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.2.3 - [NF006] Compatibilidade Multiplataforma
+
+Assegurar que o aplicativo seja compatível com dispositivos móveis nas plataformas IOS e Android. A aplicação será desenvolvida utilizando frameworks cross-platform garantindo uma experiência consistente em ambas as plataformas.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.2.4 - [NF007] Integração com Sistemas Externos
+
+Assegurar a capacidade de integração fluida com sistemas externos, como plataformas de pagamento, facilitando transações financeiras e serviços de terceiros.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 4.3 Confiabilidade
+
+#### 4.3.1 - [NF008] Disponibilidade
+
+O sistema tem que estar sempre disponível (24 horas por dia). Garantir que o sistema esteja acessível em tempo integral para atender às necessidades dos usuários
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+#### 4.3.2 - [NF009] *Consistência dos dados
+
+Caso ocorra algum erro no processamento de uma transação, o programa deve retornar para um estado anterior consistente, sem que haja o comprometimento da coerência dos dados armazenados.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 4.4 Segurança
+
+#### 4.4.1 - [NF010] Restrições de acesso
+
+A confidencialidade dos dados do cliente é assegurada pela utilização de um servidor de banco de dados seguro e por um mecanismo de acesso autorizado, no qual cada cliente utiliza um login e uma senha para poder acessar o sistema. Ou seja, cada ator terá acesso a funcionalidades personalizadas.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+## 5. Requisitos de Interface
+
+Esta seção apresenta em detalhes os requisitos de interface do sistema. Especificam como um sistema de software interage com outros sistemas, usuários e hardware. Esses requisitos são fundamentais para garantir que o software possa se comunicar de maneira eficaz e eficiente com outras partes do ambiente de tecnologia ou com os usuários finais.
+
+### 5.1 - [RI001] Design Responsivo e Multiplataforma
+
+O aplicativo deve possuir um design responsivo adaptando-se fluidamente a diferentes tamanhos de tela em dispositivos móveis (Android e iOS). A arquitetura de componentes deve ser otimizada para melhor desempenho em cada plataforma, para que a experiência do usuário seja consistente em todas as plataformas.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 5.2 - [RI002] Carregamento Rápido de Imagens
+
+Implementar técnicas de otimização, como o uso do componente FastImage, para garantir o carregamento rápido e eficiente de imagens, melhorando a experiência do usuário, principalmente em redes mais lentas.
+
+| **Prioridade** | ◻ Essencial | ◻ Importante | ✅ Desejável |
+| --- | --- | --- | --- |
+
+### 5.3 - [RI003] Animações Leves e Fluidas
+
+Ciar transições suaves e leves, proporcionando uma sensação de fluidez durante as interações do usuário. Evitar animações excessivamente longas que possam prejudicar a usabilidade.
+
+| **Prioridade** | ◻ Essencial | ✅ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+### 5.4 - [RI004] Consistência Visual e Adaptação às Diretrizes de Plataforma
+
+Manter consistência visual seguindo as diretrizes específicas de cada plataforma (Material Design para Android, Human Interface Guidelines para iOS). Garantir que a interface se adapte às atualizações dessas diretrizes.
+
+| **Prioridade** | ✅ Essencial | ◻ Importante | ◻ Desejável |
+| --- | --- | --- | --- |
+
+## 6. Glossário
+
+Esta seção apresenta uma breve descrição dos termos utilizados no documento de requisitos do sistema CondoEasy, que podem gerar dubiedade de interpretação ou que pertencem a um jargão específico do domínio.
+
+- **Condomínio**: Conjunto de moradias, como apartamentos ou casas, que compartilham áreas comuns e são geridas por uma administração centralizada.
+- **Administrador do sistema**: Pessoa responsável por gerenciar e operar o sistema CondoEasy, incluindo aprovações, monitoramento de acessos e resposta a solicitações.
+- **Usuário**: Morador ou visitante do condomínio que utiliza o sistema CondoEasy para realizar ações como solicitação de locação de áreas comuns, registro de ocorrências, e acompanhamento de cobranças.
+- **Staff do condomínio**: Equipe de pessoas que trabalham no condomínio, responsável por manutenção, segurança, e outras funções operacionais.
+- **Áreas comuns**: Espaços compartilhados pelos moradores do condomínio, como salão de festas, piscina, academia, entre outros.
+- **Solicitação de locação**: Pedido feito por um usuário para reservar uma área comum do condomínio para uso privado em uma data específica.
+- **Boletos**: Documentos gerados pelo sistema CondoEasy que servem como cobrança de taxas, multas ou outros encargos financeiros relacionados ao condomínio.
+- **Ocorrência**: Relato de um evento ou situação que necessita de atenção por parte da administração do condomínio, como problemas de manutenção, infrações de regras ou segurança.
+- **Personalização de perfil**: Funcionalidade que permite ao usuário adicionar ou editar informações pessoais no sistema, como dados de contato e documentos.
+- **Monitoramento de acesso**: Função do sistema que permite à administração controlar e registrar a entrada e saída de pessoas no condomínio, bem como visualizar imagens de câmeras de segurança integradas ao sistema.
