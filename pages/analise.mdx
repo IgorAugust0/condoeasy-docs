@@ -1,14 +1,29 @@
+import { Cards } from 'nextra/components'
+import { FilesIcon, DiagramIcon, BoxIcon } from '@components/icons'
+
 # Análise
+
+<Cards>
+  <Cards.Card
+    icon={<FilesIcon />}
+    title="Documento de Requisitos"
+    href="/analise/documento-requisitos"
+  />
+  <Cards.Card
+    icon={<DiagramIcon />}
+    title="Especificação de Use Cases"
+    href="/analise/especificacao-use-cases"
+  />
+  <Cards.Card
+    icon={<BoxIcon />}
+    title="Protótipo Baixa Qualidade"
+    href="/analise/prototipo-baixa-qualidade"
+  />
+</Cards>
 
 A seção de Análise tem como objetivo transformar os dados coletados em uma ideia concreta para a resolução do problema. Nesta fase, ocorre o levantamento e a análise de requisitos, que marcam o ponto de partida para o desenvolvimento de software. O principal foco é entender e capturar as necessidades e expectativas do cliente ou usuário final.
 
-## Atividades de Análise
-
-As principais atividades desta fase incluem o levantamento, análise, especificação e validação dos requisitos do sistema. Estas atividades são formalizadas em documentos que orientam o desenvolvimento de acordo com as necessidades do projeto. Entre os principais artefatos gerados nesta etapa, destacam-se:
-
-- **Documento de Requisitos**
-- **Especificação de Casos de Uso**
-- **Matriz de Rastreabilidade de Requisitos**
+As principais atividades desta fase incluem o levantamento, análise, especificação e validação dos requisitos do sistema. Estas atividades são formalizadas em documentos que orientam o desenvolvimento de acordo com as necessidades do projeto.
 
 ### Documento de Requisitos
 
@@ -34,7 +49,7 @@ Essa matriz é essencial para gerenciar mudanças, pois facilita a identificaç�
 
 ### Especificações de Casos de Uso
 
-As **Especificações de Casos de Uso** são documentos funcionais que descrevem as funcionalidades que o sistema deve ter, bem como o comportamento esperado. Eles detalham como o sistema deve reagir a diferentes entradas e quais saídas devem ser geradas, envolvendo operações como cálculos e manipulação de dados. 
+As **Especificações de Casos de Uso** são documentos funcionais que descrevem as funcionalidades que o sistema deve ter, bem como o comportamento esperado. Eles detalham como o sistema deve reagir a diferentes entradas e quais saídas devem ser geradas, envolvendo operações como cálculos e manipulação de dados.
 
 - Esses documentos oferecem uma visão clara do que o sistema fará e como será utilizado, garantindo que os requisitos sejam bem definidos e as expectativas dos usuários atendidas.
 - Além disso, os casos de uso são úteis no planejamento de testes de aceitação, assegurando a conformidade do sistema com os requisitos do usuário.
