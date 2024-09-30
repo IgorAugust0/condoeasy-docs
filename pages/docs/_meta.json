@@ -1,0 +1,17 @@
+{
+  "index": "Introdução",
+  "-- Etapas": {
+    "type": "separator",
+    "title": "Etapas"
+  },
+  "planejamento": "Planejamento",
+  "analise": "Análise",
+  "-- Mais": {
+    "type": "separator",
+    "title": "Mais"
+  },
+  "about-link": {
+    "title": "Sobre o CondoEasy",
+    "href": "/sobre"
+  }
+}

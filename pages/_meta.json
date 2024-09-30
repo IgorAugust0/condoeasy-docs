@@ -1,29 +1,23 @@
 {
   "index": {
-    "title": "Introdução",
+    "type": "page",
+    "title": "Home",
+    "display": "hidden",
     "theme": {
       "typesetting": "article",
       "breadcrumb": false
     }
   },
-  "-- Etapas": {
-    "type": "separator",
-    "title": "Etapas"
+  "docs": {
+    "title": "Documentação",
+    "type": "page"
   },
-  "planejamento": "Planejamento",
-  "analise": "Análise",
   "sobre": {
-    "title": "Sobre",
     "type": "page",
+    "title": "Sobre",
     "theme": {
       "typesetting": "article"
     }
-  },
-  "contact": {
-    "title": "Contato ↗",
-    "type": "page",
-    "href": "https://github.com/IgorAugust0",
-    "newWindow": true
   },
   "404": {
     "type": "page",
