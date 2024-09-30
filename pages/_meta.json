@@ -6,6 +6,10 @@
       "breadcrumb": false
     }
   },
+  "-- Etapas": {
+    "type": "separator",
+    "title": "Etapas"
+  },
   "planejamento": "Planejamento",
   "analise": "Análise",
   "sobre": {

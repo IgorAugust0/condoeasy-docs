@@ -1,7 +1,21 @@
 import React from "react";
-import { DocsThemeConfig, Link } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 
+// Links used throughout the application
+const links = {
+  github: {
+    user: "https://github.com/IgorAugust0/",
+    repo: "https://github.com/IgorAugust0/condoeasy",
+  },
+  site: "https://condoeasy.vercel.app",
+  ogImage: {
+    default: "https://condoeasy.vercel.app/og.jpeg",
+    dynamic: "https://condoeasy.vercel.app/api/og?title=",
+  },
+};
+
+// Logo component for the application header
 const logo = (
   <>
     <svg width="24" height="24" viewBox="0 0 384 512">
@@ -14,36 +28,102 @@ const logo = (
   </>
 );
 
+// Footer text component with up-to-date year and link to the GitHub repository
+const text = () => (
+  <span>
+    MIT {new Date().getFullYear()} ©
+    <a href={links.github.user} target="_blank">
+      CondoEasy
+    </a>
+    .
+  </span>
+);
+
+// Title component for navigation items, with special handling for separators
+const titleComponent = ({ title, type }) => {
+  if (type === "separator") {
+    return <span className="cursor-default">{title}</span>;
+  }
+  return <>{title}</>;
+};
+
+// Function to generate the head elements for the document
+const head = () => {
+  const { asPath, route } = useRouter();
+  const { frontMatter, title: configTitle } = useConfig();
+
+  // default values
+  const ogConfig = {
+    title: "CondoEasy",
+    description: "Um app moderno para facilitar a gestão de condomínios 🏢✨",
+    favicon: "/favicon.svg",
+  };
+
+  // Determine if the current route is the default route
+  const isDefault = route === "/" || !configTitle;
+
+  // values to be used
+  const favicon = String(ogConfig.favicon);
+  const title = configTitle + (isDefault ? "" : " – CondoEasy");
+  const description = String(frontMatter.description || ogConfig.description);
+  const canonical = new URL(asPath, links.site).toString();
+  const ogUrl = isDefault
+    ? links.ogImage.default
+    : `${links.ogImage.dynamic}${configTitle}`; // to be implemented
+  const domain = links.site.replace("https://", "");
+
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:image" content={ogUrl} />
+      <link rel="canonical" href={canonical} />
+
+      <meta httpEquiv="Content-Language" content="pt-BR" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site:domain" content={domain} />
+      <meta name="twitter:url" content={canonical} />
+      <meta name="apple-mobile-web-app-title" content={title} />
+
+      <link rel="apple-touch-icon" href={favicon} type="image/svg+xml" />
+      <link rel="icon" href={favicon} type="image/svg+xml" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
+      <link
+        rel="icon"
+        href="/favicon-dark.svg"
+        type="image/svg+xml"
+        media="(prefers-color-scheme: dark)"
+      />
+      <link
+        rel="icon"
+        href="/favicon-dark.png"
+        type="image/png"
+        media="(prefers-color-scheme: dark)"
+      />
+    </>
+  );
+};
+
 const config: DocsThemeConfig = {
   logo,
-  
-  useNextSeoProps() {
-    const { asPath } = useRouter();
-    if (["/", "/docs"].includes(asPath)) {
-      return { titleTemplate: "CondoEasy" };
-    }
-    return { titleTemplate: "%s | CondoEasy" };
-  },
   search: {
     placeholder: "Pesquisar documentação...",
     loading: "Carregando...",
-    error: "Erro ao buscar resultados.",
     // emptyResult: "Nenhum resultado encontrado.",
+    error: "Erro ao buscar resultados.",
   },
   sidebar: {
-    titleComponent({ title, type }) {
-      if (type === "separator") {
-        return <span className="cursor-default">{title}</span>;
-      }
-      return <>{title}</>;
-    },
+    titleComponent,
     defaultMenuCollapseLevel: 2, // 1 = all collapsed, 2 = all expanded
     toggleButton: true,
   },
   project: {
-    link: "https://github.com/IgorAugust0/condoeasy",
+    link: links.github.repo,
   },
-  docsRepositoryBase: "https://github.com/IgorAugust0/condoeasy",
+  docsRepositoryBase: links.github.repo,
   editLink: {
     component: null,
   },
@@ -55,21 +135,9 @@ const config: DocsThemeConfig = {
     title: "Nesta página",
   },
   footer: {
-    text: (
-      <span>
-        MIT {new Date().getFullYear()} ©
-        <a href="https://github.com/IgorAugust0" target="_blank">
-          CondoEasy
-        </a>
-        .
-      </span>
-    ),
+    text,
   },
-  // i18n: [
-  //   { locale: 'pt-BR', text: 'Português' },
-  //   { locale: 'en-US', text: 'English' },
-  //   { locale: 'es', text: 'Español' }
-  // ]
+  head,
 };
 
 export default config;
