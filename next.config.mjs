@@ -11,10 +11,13 @@ const sep = path.sep === "/" ? "/" : "\\\\";
 const ALLOWED_SVG_REGEX = new RegExp(`components${sep}icons${sep}.+\\.svg$`);
 
 export default withNextra({
+  // internationalization support (to be implemented)
   //   i18n: {
   //     locales: ['pt_BR', 'en-US', 'es'],
   //     defaultLocale: 'pt_BR'
   //   }
+
+  // allow svgs files to be imported as React components
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
