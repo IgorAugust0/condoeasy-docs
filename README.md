@@ -1,23 +1,25 @@
-# Nextra Docs Template 
+# CondoEasy Docs
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+Este repositório contêm a documentação do projeto **CondoEasy**, um app de gerenciamento de condomínios. Ele foi desenvolvido a partir do [Nextra](https://nextra.site), um template de documentação criado por Shuding.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+[**Demo →**](https://condoeasy.vercel.app/)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+[![Captura de tela da página de planejamento do site](.github/screenshot.png)](https://condoeasy.vercel.app/)
 
-## Quick Start
+## Clonando e fazendo deploy
 
-Click the button to clone this repository and deploy it on Vercel:
+Você pode clonar este repositório e fazer deploy na Vercel clicando no botão abaixo:
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FIgorAugust0%2Fcondoeasy)
 
-## Local Development
+## Rodando localmente
 
-First, run `pnpm i` to install the dependencies.
+Para rodar este projeto localmente, você precisa ter o [Node.js](https://nodejs.org/) e o [pnpm](https://pnpm.io/) instalados.
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Após clonar o repositório, instale as dependências com `pnpm i`.
 
-## License
+Em seguida, rode `pnpm dev` para iniciar o servidor de desenvolvimento e acesse localhost:3000.
 
-This project is licensed under the MIT License.
+## Licença
+
+Este projeto é licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
