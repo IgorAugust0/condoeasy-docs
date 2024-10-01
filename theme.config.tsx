@@ -108,6 +108,21 @@ const head = () => {
   );
 };
 
+// Function to display the last git commit timestamp
+const gitTimestamp = ({ timestamp }) => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const formattedDate = new Date(timestamp).toLocaleDateString(
+    "pt-BR",
+    options
+  );
+  return <div>Última atualização em {formattedDate}</div>;
+};
+
+// Configuration object for the DocsTheme
 const config: DocsThemeConfig = {
   logo,
   search: {
@@ -139,6 +154,14 @@ const config: DocsThemeConfig = {
     text,
   },
   head,
+  themeSwitch: {
+    useOptions: {
+      light: "Claro",
+      dark: "Escuro",
+      system: "Sistema",
+    },
+  },
+  gitTimestamp,
 };
 
 export default config;
